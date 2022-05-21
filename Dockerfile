@@ -10,7 +10,7 @@ LABEL "com.github.actions.icon"="zap"
 LABEL "com.github.actions.color"="green"
 
 RUN export DEBIAN_FRONTEND=noninteractive \
-&& apt-get update && apt-get install -y --no-install-recommends git
+&& apt-get update && apt-get install -y --no-install-recommends git ca-certificates
 
 COPY --from=builder /usr/local/cargo/bin/zola /usr/local/bin/zola
 COPY entrypoint.sh /entrypoint.sh
