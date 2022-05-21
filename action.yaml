@@ -1,5 +1,5 @@
-name: 'Zola Deploy to Pages'
-description: 'Build and deploy a Zola site to GitHub Pages'
+name: 'Zola Deploy to Pages (ja/zh indexing enabled)'
+description: 'Build and deploy a Zola site to GitHub Pages (ja/zh indexing enabled)'
 author: 'Shaleen Jain'
 runs:
   using: 'docker'
