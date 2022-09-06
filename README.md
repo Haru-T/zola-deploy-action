@@ -32,7 +32,7 @@ jobs:
     - name: Checkout main
       uses: actions/checkout@v3.0.0
     - name: Build and deploy
-      uses: Haru-T/zola-deploy-action@master
+      uses: Haru-T/zola-deploy-action@v0.16.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -56,7 +56,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3.0.0
       - name: Build only 
-        uses: Haru-T/zola-deploy-action@master
+        uses: Haru-T/zola-deploy-action@v0.16.1
         env:
           BUILD_DIR: docs
           BUILD_ONLY: true
@@ -70,7 +70,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3.0.0
       - name: Build and deploy
-        uses: Haru-T/zola-deploy-action@master
+        uses: Haru-T/zola-deploy-action@v0.16.1
         env:
           BUILD_DIR: docs
           PAGES_BRANCH: gh-pages
@@ -81,6 +81,7 @@ jobs:
 * `PAGES_BRANCH`: The git branch of your repo to which the built static files will be pushed. Default is `gh-pages` branch
 * `REPOSITORY`: The target repository to push to. Default is `GITHUB_REPOSITORY`(current repository). Set this variable if you want to deploy to other repo.
 * `BUILD_DIR`: The path from the root of the repo where we should run the `zola build` command. Default is `.` (current directory)
+* `OUT_DIR`: The build output directory of `zola build`. Default is `public`
 * `BUILD_FLAGS`: Custom build flags that you want to pass to zola while building. (Be careful supplying a different build output directory might break the action).
 * `BUILD_ONLY`: Set to value `true` if you don't want to deploy after `zola build`.
 * `BUILD_THEMES`: Set to false to disable fetching themes submodules. Default `true`.
