@@ -1,5 +1,5 @@
 FROM docker.io/library/rust:1.61.0-bullseye AS builder
-RUN cargo install --git https://github.com/getzola/zola --tag v0.15.3 --features search/indexing-ja,search/indexing-zh
+RUN cargo install --git https://github.com/getzola/zola --tag v0.16.3 --features libs/indexing-ja,libs/indexing-zh
 
 from docker.io/library/debian:bullseye-slim
 LABEL "maintainer"="Haru-T <htgeek.with.insight+com.github@googlemail.com>"
@@ -16,4 +16,3 @@ COPY --from=builder /usr/local/cargo/bin/zola /usr/local/bin/zola
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-
