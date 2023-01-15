@@ -3,7 +3,7 @@ description: 'Build and deploy a Zola site to GitHub Pages (ja/zh indexing enabl
 author: 'Haru-T'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/haru-t/zola-deploy-action:0.16.1'
 branding:
   icon: 'zap'
   color: 'green'

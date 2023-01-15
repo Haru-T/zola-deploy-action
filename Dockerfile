@@ -1,5 +1,8 @@
-FROM docker.io/library/rust:1.61.0-bullseye AS builder
-RUN cargo install --git https://github.com/getzola/zola --tag v0.16.1 --features libs/indexing-ja,libs/indexing-zh
+ARG rust_ver
+
+FROM docker.io/library/rust:latest AS builder
+ARG zola_ver
+RUN cargo install --git https://github.com/getzola/zola --tag v$zola_ver --features libs/indexing-ja,libs/indexing-zh
 
 from docker.io/library/debian:bullseye-slim
 LABEL "maintainer"="Haru-T <htgeek.with.insight+com.github@googlemail.com>"
